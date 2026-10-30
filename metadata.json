@@ -1,0 +1,8 @@
+{
+  "name": "El Niño Preemption Engine",
+  "description": "AI-assisted drought-response planning, MILP relief budget optimization, satellite crop loss verification, and emergency fleet logistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

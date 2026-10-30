@@ -1,0 +1,5 @@
+Contact: mailto:y.a.t.h.a.r.t.h.r.l.a.d.k.a.t@gmail.com
+Expires: 2027-10-29T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://yatharthrladkat.github.io/.well-known/security.txt
+Policy: https://yatharthrladkat.github.io/

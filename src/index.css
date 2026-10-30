@@ -1,0 +1,150 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Leaflet Map Custom Enhancements */
+.leaflet-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background-color: #F3F4F6 !important;
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.15) !important;
+  border: 1px solid #E3E6EB !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: #FFFFFF !important;
+}
+
+.custom-district-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes map-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.6);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(198, 40, 40, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(198, 40, 40, 0);
+  }
+}
+
+.pulse-critical {
+  animation: map-pulse 2s infinite ease-in-out;
+}
+
+:root {
+  --bg-page: #F6F7F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAFBFC;
+  --bg-subtle: #F1F3F5;
+  --border-color: #E3E6EB;
+  --border-subtle: #ECEEF2;
+
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --text-disabled: #9CA3AF;
+
+  --color-primary: #0F4C81;
+  --color-primary-hover: #0A3963;
+  --color-primary-light: #EEF4FA;
+  --color-primary-border: #BCD4EC;
+
+  --color-critical: #C62828;
+  --color-critical-light: #FDECEA;
+  --color-critical-border: #F5C6CB;
+
+  --color-warning: #B26A00;
+  --color-warning-light: #FFF8E1;
+  --color-warning-border: #FFE082;
+
+  --color-healthy: #2E7D32;
+  --color-healthy-light: #E8F5E9;
+  --color-healthy-border: #C8E6C9;
+
+  --shadow-subtle: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-page: var(--bg-page);
+  --color-card: var(--bg-card);
+  --color-border: var(--border-color);
+  
+  --color-gov-navy: var(--color-primary);
+  --color-gov-navy-hover: var(--color-primary-hover);
+  --color-gov-navy-light: var(--color-primary-light);
+  
+  --color-status-critical: var(--color-critical);
+  --color-status-critical-bg: var(--color-critical-light);
+  
+  --color-status-warning: var(--color-warning);
+  --color-status-warning-bg: var(--color-warning-light);
+  
+  --color-status-healthy: var(--color-healthy);
+  --color-status-healthy-bg: var(--color-healthy-light);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border-color);
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Tabular nums for financial and statistical data */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom minimal scrollbar for enterprise tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F3F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Focus ring accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
